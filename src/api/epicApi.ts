@@ -13,6 +13,5 @@ export async function fetchEpicImages(): Promise<EpicImage[]> {
 }
 
 export function getEpicImageUrl(image: EpicImage): string {
-  //https://api.nasa.gov/EPIC/archive/natural/2019/05/30/png/epic_1b_20190530011359.png?api_key=DEMO_KEY
   return `https://api.nasa.gov/EPIC/archive/natural/${image.date.split(" ")[0].replace(/-/g, "/")}/png/${image.image}.png?api_key=DEMO_KEY`;
 }
