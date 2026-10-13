@@ -1,30 +1,63 @@
 body {
   margin: 0;
-  background: #05070d;
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
+  background: #05070d;
 }
+
+/* =========================
+   APP / THEME
+========================= */
 
 .space-app {
   min-height: 100vh;
   background:
-    radial-gradient(circle at 50% -10%, rgba(70, 90, 140, 0.2), transparent 35%),
+    radial-gradient(
+      circle at 50% -10%,
+      rgba(70, 90, 140, 0.2),
+      transparent 35%
+    ),
     #05070d;
+  color: #ffffff;
 }
 
-/* Navbar */
+.space-app.light-theme {
+  background: #f5f7fa;
+  color: #1a1a1a;
+}
+
+/* =========================
+   NAVBAR
+========================= */
 
 .space-navbar {
   background: rgba(5, 7, 13, 0.8);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(12px);
 }
+.space-navbar .brand-text {
+  color: white;
+}
+
+/* Dark theme navbar text */
+.space-app.dark-theme .navbar-brand {
+  color: #ffffff;
+}
 
 .brand-text {
   letter-spacing: 0.3px;
 }
 
-/* Hero */
+/* Light navbar */
+
+.space-app.light-theme .space-navbar {
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   HERO
+========================= */
 
 .hero-section {
   max-width: 850px;
@@ -51,19 +84,50 @@ body {
   margin-bottom: 12px;
 }
 
-/* Refresh */
+/* Light hero */
+
+.space-app.light-theme .eyebrow {
+  color: #68738a;
+}
+
+.space-app.light-theme .hero-subtitle {
+  color: #5f6878;
+}
+
+/* =========================
+   REFRESH / DATE CONTROLS
+========================= */
 
 .refresh-btn {
-  /* //border-color: rgba(255, 255, 255, 0.2); */
   padding: 8px 16px;
   border-radius: 8px;
 }
 
-.refresh-btn:hover {
-  /* background: rgba(237, 241, 241, 0.155); */
+.date-picker {
+  width: 160px;
+  background: #0c0f18;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 8px 12px;
 }
 
-/* NASA Card */
+/* Light controls */
+
+.space-app.light-theme .date-picker {
+  background: #ffffff;
+  color: #1a1a1a;
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+.space-app.light-theme .refresh-btn {
+  color: #1a1a1a;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+/* =========================
+   NASA CARD
+========================= */
 
 .nasa-card {
   max-width: 1100px;
@@ -75,6 +139,10 @@ body {
   box-shadow: 0 25px 80px rgba(0, 0, 0, 0.45);
 }
 
+.nasa-card-body {
+  padding: 32px;
+}
+
 .nasa-image {
   width: 100%;
   display: block;
@@ -82,36 +150,19 @@ body {
   object-fit: cover;
 }
 
-.date-picker {
-  width: 160px;
-  background: #0c0f18;
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 8px;
-  padding: 8px 12px;
+/* Light card */
+
+.space-app.light-theme .nasa-card {
+  background: #ffffff;
+  color: #1a1a1a;
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
 }
 
-.nasa-video-placeholder {
-  min-height: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: #080b13;
-  color: #929bad;
-  text-align: center;
-  padding: 40px;
-}
-.nasa-card-body {
-  padding: 32px;
-}
+/* =========================
+   NASA META
+========================= */
 
-.nasa-date {
-  display: inline-flex;
-  align-items: center;
-  padding-bottom: 12px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-}
 .nasa-meta {
   display: flex;
   align-items: center;
@@ -121,46 +172,35 @@ body {
 }
 
 .date-value {
-  font-size: 0.8rem;
-  color: #aeb8ca;
-  letter-spacing: 0.08em;
-  white-space: nowrap;
-}
-.nasa-video {
-  width: 100%;
-  height: 620px;
-  border: 0;
-  display: block;
-}
-.credit-text {
-  font-size: 0.78rem;
-  color: #69748a;
-  margin-left: auto;
-}
-.date-value {
-  font-size: 0.8rem;
-  color: #8f9bb3;
-  letter-spacing: 0.12em;
-  font-weight: 500;
-}
-
-.date-label {
-  font-size: 0.65rem;
-  letter-spacing: 0.15em;
-  font-weight: 600;
-  color: #68738a;
-}
-
-.date-value {
   font-size: 0.85rem;
   color: #c5ccda;
   letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
 .credit-text {
+  margin-left: auto;
   color: #69748a;
   font-size: 0.8rem;
 }
+
+/* Light meta */
+
+.space-app.light-theme .nasa-meta {
+  border-bottom-color: rgba(0, 0, 0, 0.08);
+}
+
+.space-app.light-theme .date-value {
+  color: #4f596a;
+}
+
+.space-app.light-theme .credit-text {
+  color: #6b7280;
+}
+
+/* =========================
+   NASA CONTENT
+========================= */
 
 .nasa-title {
   font-size: 1.8rem;
@@ -174,4 +214,141 @@ body {
   line-height: 1.8;
   font-size: 0.98rem;
   margin-bottom: 0;
+}
+
+/* Light content */
+
+.space-app.light-theme .nasa-description {
+  color: #5f6878;
+}
+
+/* =========================
+   VIDEO
+========================= */
+
+.nasa-video {
+  width: 100%;
+  height: 620px;
+  border: 0;
+  display: block;
+}
+
+.nasa-video-placeholder {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #080b13;
+  color: #929bad;
+  text-align: center;
+  padding: 40px;
+}
+
+/* Light video placeholder */
+
+.space-app.light-theme .nasa-video-placeholder {
+  background: #eef1f5;
+  color: #5f6878;
+}
+
+/* =========================
+   LIGHT THEME
+========================= */
+
+.space-app.light-theme {
+  background: #f5f7fa;
+  color: #1a1a1a;
+}
+
+/* Navbar */
+
+.space-app.light-theme .space-navbar {
+  background: rgba(255, 255, 255, 0.92);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+
+.space-app.light-theme .navbar-brand .brand-text{
+  color: #1a1a1a;
+}
+
+/* Hero */
+
+.space-app.light-theme .eyebrow {
+  color: #68738a;
+}
+
+.space-app.light-theme .hero-subtitle {
+  color: #5f6878;
+}
+
+.space-app.light-theme .lead {
+  color: #5f6878 !important;
+}
+
+/* Date picker */
+
+.space-app.light-theme .date-picker {
+  background: #ffffff;
+  color: #1a1a1a;
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+/* Buttons */
+
+.space-app.light-theme .refresh-btn {
+  color: #1a1a1a;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.space-app.light-theme .refresh-btn:hover {
+  background: #1a1a1a;
+  color: #ffffff;
+}
+
+/* NASA card */
+
+.space-app.light-theme .nasa-card {
+  background: #ffffff;
+  color: #1a1a1a;
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Metadata */
+
+.space-app.light-theme .nasa-meta {
+  border-bottom-color: rgba(0, 0, 0, 0.08);
+}
+
+.space-app.light-theme .date-value {
+  color: #4f596a;
+}
+
+.space-app.light-theme .credit-text {
+  color: #6b7280;
+}
+
+/* Description */
+
+.space-app.light-theme .nasa-description {
+  color: #5f6878;
+}
+
+/* Video */
+
+.space-app.light-theme .nasa-video-placeholder {
+  background: #eef1f5;
+  color: #5f6878;
+}
+
+.space-app.light-theme .nasa-video-placeholder .btn {
+  color: #1a1a1a;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.space-app.light-theme .nasa-video-placeholder .btn:hover {
+  background: #1a1a1a;
+  color: #ffffff;
 }
