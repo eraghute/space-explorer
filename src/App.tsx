@@ -3,6 +3,7 @@ import Explore from "./pages/Explorer";
 import Apod from "./pages/Apod";
 import { useState } from "react";
 import Epic from "./pages/Epic";
+import EarthWeather from "./pages/EarthWeather";
 
 function App() {
   const [isDark, setIsDark] = useState(
@@ -26,16 +27,16 @@ function App() {
           </Link>
 
           <div className="d-flex gap-2">
-            <Link to="/" className="btn btn-sm btn-light px-3">
-              Explore
-            </Link>
-
-            <Link to="/apod" className="btn btn-sm btn-light px-3">
+            <Link to="/apod" className="btn btn-light px-3">
               NASA APOD
             </Link>
 
-            <Link to="/epic" className="btn btn-sm btn-light px-3">
+            <Link to="/epic" className="btn btn-light px-3">
               Earth Imagery
+            </Link>
+
+            <Link to="/earth-weather" className="btn btn-light px-3">
+              Earth Weather
             </Link>
             <button className="btn btn-light" onClick={() => setTheme(!isDark)}>
               {isDark ? "☀️ Switch to Light" : "🌙 Switch to Dark"}
@@ -48,6 +49,7 @@ function App() {
         <Route path="/" element={<Explore />} />
         <Route path="/apod" element={<Apod />} />
         <Route path="/epic" element={<Epic />} />
+        <Route path="/earth-weather" element={<EarthWeather />} />
       </Routes>
     </div>
   );

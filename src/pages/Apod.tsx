@@ -1,6 +1,5 @@
 import { fetchImageByDate } from "../api/nasaApi";
 import { useQuery } from "@tanstack/react-query";
-import { fetchLondonWeather } from "../api/weatherApi";
 import { useState } from "react";
 import "../App.css";
 
@@ -23,19 +22,6 @@ function Apod() {
     return doc.body.textContent || "";
   }
 
-  const {
-    data: weather,
-    isLoading: isWeatherLoading,
-    isFetching: isWeatherFetching,
-    isError: isWeatherError,
-    error: weatherError,
-    refetch: refetchWeather,
-  } = useQuery({
-    queryKey: ["london-weather"],
-    queryFn: fetchLondonWeather,
-    // staleTime: 3 * 1000,
-    // enabled: false,
-  });
   const {
     data: image,
     isLoading,
@@ -75,41 +61,6 @@ function Apod() {
   return (
     <>
       <div>
-        {weather?.current && (
-          <div className="container mt-3">
-            <div className="alert alert-info">
-              <div className="d-flex justify-content-between align-items-center flex-wrap gap-2">
-                <h5 className="mb-0">London Weather</h5>
-
-                <button
-                  className="btn btn-sm btn-outline-dark"
-                  onClick={() => refetchWeather()}
-                  disabled={isWeatherFetching}
-                >
-                  {isWeatherFetching ? "Refreshing..." : "↻ Refresh Weather"}
-                </button>
-              </div>
-
-              <p className="mt-3 mb-1">
-                Temperature: {weather.current.temperature_2m}°C
-              </p>
-
-              <p className="mb-0">
-                Humidity: {weather.current.relative_humidity_2m}%
-              </p>
-            </div>
-          </div>
-        )}
-
-        {isWeatherError && (
-          <div className="container mt-3">
-            <div className="alert alert-danger" role="alert">
-              {weatherError instanceof Error
-                ? weatherError.message
-                : "Unable to fetch London weather data."}
-            </div>
-          </div>
-        )}
         <main className="container py-5">
           <div className="hero-section text-center">
             <span className="eyebrow">NASA • ASTRONOMY PICTURE OF THE DAY</span>
