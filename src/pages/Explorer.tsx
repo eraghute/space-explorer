@@ -96,10 +96,12 @@ function Explore() {
                   Explore current weather conditions and forecasts for locations
                   around the world.
                 </p>
-
-                <span className="badge rounded-pill text-bg-secondary mt-auto pt-2">
-                  Coming soon
-                </span>
+                <Link
+                  to="/earth-weather"
+                  className="btn btn-primary mt-auto pt-2"
+                >
+                  Explore Earth Weather
+                </Link>
               </div>
             </div>
           </div>

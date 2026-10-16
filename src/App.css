@@ -384,3 +384,150 @@ body {
   opacity: 0.65;
   cursor: not-allowed;
 }
+
+
+/* Weather dashboard details */
+.space-app .weather-temperature {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -1px;
+  color: var(--text-color);
+}
+
+.space-app .weather-condition {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--muted-text);
+}
+
+.space-app .weather-detail {
+  height: 100%;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--card-bg);
+  color: var(--text-color);
+}
+
+.space-app .weather-detail-label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--muted-text);
+}
+
+
+/* Hourly forecast */
+.space-app .hourly-forecast {
+  scrollbar-width: thin;
+  scrollbar-color: var(--muted-text) transparent;
+}
+
+.space-app .hourly-forecast-item {
+  flex: 0 0 150px;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--card-bg);
+  color: var(--text-color);
+  text-align: center;
+}
+
+.space-app .hourly-temperature {
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+.space-app .hourly-forecast-item p {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 480px) {
+  .space-app .hourly-forecast-item {
+    flex-basis: 130px;
+  }
+}
+
+
+/* 10-day forecast */
+.space-app .daily-forecast {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.space-app .daily-forecast-item {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 0.8fr 0.7fr;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--card-bg);
+  color: var(--text-color);
+}
+
+.space-app .daily-forecast-date {
+  font-weight: 600;
+}
+
+.space-app .daily-forecast-condition {
+  color: var(--muted-text);
+}
+
+.space-app .daily-forecast-temperatures {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.space-app .daily-high {
+  /* font-weight: 700; */
+}
+
+.space-app .daily-low, .daily-high {
+  color: var(--muted-text);
+}
+
+.space-app .daily-forecast-rain {
+  text-align: right;
+  white-space: nowrap;
+  color: var(--muted-text);
+}
+
+@media (max-width: 600px) {
+  .space-app .daily-forecast-item {
+    grid-template-columns: 1fr auto;
+    gap: 0.5rem;
+    padding: 0.875rem;
+  }
+
+  .space-app .daily-forecast-condition {
+    grid-column: 1;
+  }
+
+  .space-app .daily-forecast-temperatures {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
+
+  .space-app .daily-forecast-rain {
+    grid-column: 1 / -1;
+    text-align: left;
+  }
+}
+
+
+/* Weather forecast icons */
+.space-app .forecast-weather-icon {
+  display: inline-block;
+  font-size: 1.6rem;
+  line-height: 1.4;
+}
+
+.space-app .weather-icon {
+  font-size: 1.8rem;
+  vertical-align: middle;
+}

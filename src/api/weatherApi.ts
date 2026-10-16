@@ -1,5 +1,5 @@
 const WEATHER_URL =
-  "https://api.open-meteo.com/v1/forecast?latitude=51.5074&longitude=-0.1278&current=temperature_2m,relative_humidity_2m,weather_code";
+  "https://api.open-meteo.com/v1/forecast?latitude=51.5072&longitude=-0.1276&current=temperature_2m,relative_humidity_2m,weather_code&hourly=temperature_2m,relative_humidity_2m,precipitation_probability,weather_code&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&forecast_days=10&timezone=Europe%2FLondon";
 
 export async function fetchLondonWeather() {
   const response = await fetch(WEATHER_URL);
@@ -37,4 +37,19 @@ export function getWeatherDescription(code: number): string {
   };
 
   return weatherDescriptions[code] ?? "Unknown conditions";
+}
+
+export function getWeatherIcon(code: number): string {
+  if (code === 0) return "☀️";
+  if (code === 1 || code === 2) return "🌤️";
+  if (code === 3) return "☁️";
+  if (code === 45 || code === 48) return "🌫️";
+  if (code >= 51 && code <= 57) return "🌦️";
+  if (code >= 61 && code <= 67) return "🌧️";
+  if (code >= 71 && code <= 77) return "❄️";
+  if (code >= 80 && code <= 82) return "🌧️";
+  if (code >= 85 && code <= 86) return "🌨️";
+  if (code >= 95 && code <= 99) return "⛈️";
+
+  return "🌡️";
 }
