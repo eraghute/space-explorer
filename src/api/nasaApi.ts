@@ -18,6 +18,5 @@ export async function fetchImageByDate(
   if (!image) {
     throw new Error(`No NASA image found for ${selectedDate}`);
   }
-  console.log("NASA API function called");
   return image;
 }

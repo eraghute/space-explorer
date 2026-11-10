@@ -4,6 +4,8 @@ import Apod from "./pages/Apod";
 import { useState } from "react";
 import Epic from "./pages/Epic";
 import EarthWeather from "./pages/EarthWeather";
+import GlobeExplorer from "./pages/GlobeExplorer";
+import ThingsToWatch from "./pages/ThingsToWatch";
 
 function App() {
   const [isDark, setIsDark] = useState(
@@ -38,6 +40,12 @@ function App() {
             <Link to="/earth-weather" className="btn btn-light px-3">
               Earth Weather
             </Link>
+            <Link to="/globe" className="btn btn-light px-3">
+              Globe Explorer
+            </Link>
+            <Link to="/things-to-watch" className="btn btn-light px-3">
+              Things to Watch
+            </Link>
             <button className="btn btn-light" onClick={() => setTheme(!isDark)}>
               {isDark ? "☀️ Switch to Light" : "🌙 Switch to Dark"}
             </button>
@@ -50,6 +58,8 @@ function App() {
         <Route path="/apod" element={<Apod />} />
         <Route path="/epic" element={<Epic />} />
         <Route path="/earth-weather" element={<EarthWeather />} />
+        <Route path="/globe" element={<GlobeExplorer />} />
+        <Route path="/things-to-watch" element={<ThingsToWatch />} />
       </Routes>
     </div>
   );
