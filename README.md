@@ -1,78 +1,66 @@
-# React + TypeScript + Vite
+# Space Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive space and Earth exploration app built with React and TypeScript. Explore NASA imagery, view Earth from a 3D globe, discover astronomical events, and check weather forecasts.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Globe Explorer** – Explore a 3D Earth globe powered by CesiumJS. Rotate and zoom the globe, select a location, and view its coordinates and astronomical insights, including sunlight conditions and Sun and Moon information.
+- **Things to Watch** – Browse celestial events in daily, weekly, monthly, and yearly calendar views. Search and filter events by category and date. Includes curated eclipse and meteor-shower information, alongside asteroid close-approach data from NASA's NeoWs feed.
+- **NASA Astronomy Picture of the Day** – Explore NASA's astronomy image collection, read descriptions, and browse available dates.
+- **Earth from Space** – Browse natural-colour Earth imagery from NASA's EPIC camera, with a main image viewer and capture thumbnails.
+- **Earth Weather** – View current conditions, hourly forecasts, and a 10-day forecast for London using Open-Meteo.
+- **Dark and light themes** – Switch between themes across the app.
 
-## React Compiler
+## Built with
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- React 19 and TypeScript
+- Vite
+- React Router
+- TanStack Query
+- CesiumJS
+- SunCalc
+- Bootstrap 5 and custom CSS
+- Vitest and Testing Library
 
-Note: This will impact Vite dev & build performances.
-You can also try [the experimental native React Compiler support in plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md#rust-react-compiler) by using `compiler: true` in the plugin options instead of using the Babel plugin.
+## Getting started
 
-## Expanding the ESLint configuration
+### Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Node.js and npm
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Install and run
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+git clone https://github.com/eraghute/space-explorer.git
+cd space-explorer
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+Open the local URL printed by Vite in your terminal.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Available scripts
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the local development server |
+| `npm run build` | Run TypeScript checks and create a production build |
+| `npm run preview` | Preview the production build locally |
+| `npm run lint` | Run ESLint |
+| `npm run test -- --run` | Run the test suite once |
 
-```
+## Data sources
+
+- [NASA Astronomy Picture of the Day](https://science.nasa.gov/ astronomy-picture-of-the-day/) – Astronomy images and descriptions.
+- [NASA EPIC](https://epic.gsfc.nasa.gov/) – Natural-colour images of Earth.
+- [NASA EOSDIS GIBS](https://www.earthdata.nasa.gov/data/tools/gibs) – Earth imagery used by the globe.
+- [NASA Near Earth Object Web Service (NeoWs)](https://api.nasa.gov/) – Near-Earth object close-approach data.
+- [NASA GSFC Eclipse Predictions](https://eclipse.gsfc.nasa.gov/) – Eclipse information.
+- [NASA Science: Meteor Showers](https://science.nasa.gov/solar-system/meteors-meteorites/meteor-showers/) – Meteor-shower information.
+- [Open-Meteo](https://open-meteo.com/) – London weather forecasts.
+
+Some NASA services use the public `DEMO_KEY`, which has request limits. If a NASA data source is temporarily unavailable or its limit has been reached, try again later.
+
+## Project status
+
+This is an ongoing personal project. Features and data sources may evolve as the application develops.
