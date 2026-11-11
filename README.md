@@ -51,7 +51,7 @@ Open the local URL printed by Vite in your terminal.
 
 ## Data sources
 
-- [NASA Astronomy Picture of the Day](https://science.nasa.gov/ astronomy-picture-of-the-day/) – Astronomy images and descriptions.
+- [NASA Astronomy Picture of the Day](https://science.nasa.gov/solar-system/astronomy-picture-of-the-day/) – Astronomy images and descriptions.
 - [NASA EPIC](https://epic.gsfc.nasa.gov/) – Natural-colour images of Earth.
 - [NASA EOSDIS GIBS](https://www.earthdata.nasa.gov/data/tools/gibs) – Earth imagery used by the globe.
 - [NASA Near Earth Object Web Service (NeoWs)](https://api.nasa.gov/) – Near-Earth object close-approach data.
